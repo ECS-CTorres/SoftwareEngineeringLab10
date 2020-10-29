@@ -1,17 +1,28 @@
-Tasks to answer in your own README.md that you submit on Canvas:
+1. The logger.log file is different because the level for the log file is set to all, rather than to INFO, like the console is set to.
 
-1.  See logger.log, why is it different from the log to console?
-1.  Where does this line come from? FINER org.junit.jupiter.engine.execution.ConditionEvaluator logResult Evaluation of condition [org.junit.jupiter.engine.extension.DisabledCondition] resulted in: ConditionEvaluationResult [enabled = true, reason = '@Disabled is not present']
-1.  What does Assertions.assertThrows do?
-1.  See TimerException and there are 3 questions
-    1.  What is serialVersionUID and why do we need it? (please read on Internet)
-    2.  Why do we need to override constructors?
-    3.  Why we did not override other Exception methods?	
-1.  The Timer.java has a static block static {}, what does it do? (determine when called by debugger)
-1.  What is README.md file format how is it related to bitbucket? (https://confluence.atlassian.com/bitbucketserver/markdown-syntax-guide-776639995.html)
-1.  Why is the test failing? what do we need to change in Timer? (fix that all tests pass and describe the issue)
-1.  What is the actual issue here, what is the sequence of Exceptions and handlers (debug)
-1.  Make a printScreen of your eclipse JUnit5 plugin run (JUnit window at the bottom panel) 
-1.  Make a printScreen of your eclipse Maven test run, with console
-1.  What category of Exceptions is TimerException and what is NullPointerException
-1.  Push the updated/fixed source code to your own repository.
+2. This line is shown because of the consequent tests ran within tester, if more than one test is run, this line is shown.
+
+3. assertThrows() takes a specific exception class and a statment to run. If that statement results in the given exception to be thrown, then the assert passes.
+
+4.
+    1. The serialization runtime uses a serialVersionUID is used during deserialization to verify that the sender and receiver of a serialized object are compatible with respect to serialization. If the receiver has a different serialVersionUID than that of the corresponding sender's class, then deserialization will result in an InvalidClassException.
+    
+    2. We need to override constructors because they are not inherited from the Exception class.
+    
+    3. We don't have to override the Exception methods because they are inherited from the Exception class and work with constructors given.
+    
+5. A static block will execute once and before the first call to an instance of the class, in this case the static block is used to specify the logger properties.
+
+6. README.md uses markdown to display a normal README file that would normally be in any project. A README is a reference for other users visiting your repository and documents steps for them to get your application up and running.
+
+7. TestTimerFail() fails because the assertThrows() encounters a NullPointerException, instead of a TimerException. This is due to the finally() block within timeMe(), that, regardless of the thrown exception, runs anyways.
+
+8. The actual problem here is that the tests are not running in order. Generally you'd expect the tests to run in the order in which they are created.
+
+9. ![Alt text](passingTests.png "Passing Tests")
+
+10. ![Alt text](passingTests-Maven.png "Passing Tests")
+
+11. TimerException is a user-defined exception and NullPointerException is a built-in exception.
+
+12.

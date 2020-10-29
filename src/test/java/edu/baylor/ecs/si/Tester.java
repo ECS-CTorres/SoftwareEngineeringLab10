@@ -11,16 +11,15 @@ public class Tester {
 	void passingTest() throws TimerException {
 		Assertions.assertTrue(Timer.timeMe(1000) >= 1000);
 	}
+
 	@DisplayName("Test Timer fail")
 	@Test
-	void failOverTest() throws TimerException {
-		Assertions.assertThrows(TimerException.class, () -> {
-			Timer.timeMe(-1);
-		});
+	void failOverTest() {
+		Assertions.assertThrows(TimerException.class, () -> Timer.timeMe(-1));
 	}
 	
 	@Test
-	@DisplayName("Test Timer edgecase")
+	@DisplayName("Test Timer Edge Case")
 	void failOverTestEdge() throws TimerException {
 		Assertions.assertTrue(Timer.timeMe(0) >= 0);
 	}
