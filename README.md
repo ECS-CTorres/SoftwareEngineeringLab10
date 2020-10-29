@@ -24,5 +24,3 @@
 10. ![Alt text](passingTests-Maven.png "Passing Tests")
 
 11. TimerException is a user-defined exception and NullPointerException is a built-in exception.
-
-12.
