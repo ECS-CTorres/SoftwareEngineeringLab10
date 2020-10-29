@@ -1,6 +1,6 @@
 1. The logger.log file is different because the level for the log file is set to all, rather than to INFO, like the console is set to.
 
-2. This line is shown because of the consequent tests ran within tester, if more than one test is run, this line is shown.
+2. This line is shown because of the consequent tests ran within tester, if more than one test is run, this line is shown to show that is is checking for the @Disabled annotation.
 
 3. assertThrows() takes a specific exception class and a statment to run. If that statement results in the given exception to be thrown, then the assert passes.
 

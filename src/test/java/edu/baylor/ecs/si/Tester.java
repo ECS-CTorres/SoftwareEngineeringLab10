@@ -1,8 +1,10 @@
 package edu.baylor.ecs.si;
 
+import org.junit.FixMethodOrder;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.runners.MethodSorters;
 
 public class Tester {
 	
